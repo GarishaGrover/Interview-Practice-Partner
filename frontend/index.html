@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Interview Practice Partner — Demo</title>
+    <style>
+        body { font-family: system-ui, Arial; padding: 16px; max-width: 900px; margin: auto; }
+        header { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+        select, input, button { padding: 8px; font-size: 14px; }
+        .transcript { border: 1px solid #ddd; padding: 12px; margin-top: 12px; border-radius: 8px; background: #fff; height: 320px; overflow: auto; }
+        .controls { display: flex; gap: 8px; margin-top: 8px; }
+        .qa { margin: 8px 0; }
+        .hint { color: #666; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <h2>Interview Practice Partner — Demo</h2>
+    <div class="controls">
+        <label>Persona:</label>
+        <select id="persona">
+            <option>Friendly</option>
+            <option>Direct</option>
+            <option>Technical</option>
+        </select>
+        <label>Role:</label>
+        <select id="role">
+            <option>Software Engineer</option>
+            <option>Data Scientist</option>
+            <option>General</option>
+        </select>
+        <label>Questions:</label>
+        <input id="qcount" type="number" value="2" min="1" max="4" style="width:64px;">
+        <button id="start">Start Mock Interview</button>
+    </div>
+    <div id="interview-area" style="margin-top:24px;">
+        <div id="question-section">
+            <b id="current-question-label"></b>
+            <div id="question-text" style="margin-top:10px;"></div>
+            <div class="controls" style="margin-top:18px;">
+                <button id="speak-answer">Speak Answer (use mic)</button>
+                <button id="type-answer">Type Answer</button>
+                <button id="next-question" style="display:none;">Next Question</button>
+                <button id="export-json">Export JSON</button>
+            </div>
+        </div>
+        <div id="feedback-area" style="margin-top:16px; display:none;">
+            <b>Feedback:</b>
+            <div id="feedback-text"></div>
+        </div>
+        <div id="progress" class="hint"></div>
+        <div id="transcript-area" class="transcript"></div>
+    </div>
+    <script src="app-v2.js"></script>
+</body>
+</html>
